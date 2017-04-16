@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ViewSizeCalculate"><attr format="float" name="widthRatio"/><attr format="float" name="heightRatio"/><attr format="enum" name="datumRatio"><enum name="datumWidth" value="1"/><enum name="datumHeight" value="2"/></attr></declare-styleable>
+</resources>
