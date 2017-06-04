@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gproject.R;
+import com.gproject.android.manager.DormManager;
 import com.gproject.android.manager.EventManager;
 import com.gproject.android.manager.ImageManager;
 import com.gproject.android.manager.NetworkManager;
@@ -32,6 +33,8 @@ public class BaseActivity extends FragmentActivity {
 
     protected boolean shouldRefreshView;
 
+    protected DormManager dormManager;
+
     private View loadingView;
 
     public void onEvent(String event) {
@@ -43,13 +46,17 @@ public class BaseActivity extends FragmentActivity {
         return networkManager;
     }
 
+    public DormManager getDormManager() {
+        return dormManager;
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //
         networkManager = new NetworkManager(this);
-
+        dormManager = DormManager.GetInstance(this);
         //
         ImageManager.GetInstance(getApplicationContext());
         EventManager.GetInstance().getEventBus().register(this);

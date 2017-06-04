@@ -40,6 +40,7 @@ public class LoginActivity extends BaseActivity {
     }
 
     private void initView() {
+        setTitle("登录");
         idEdit.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -120,5 +121,7 @@ public class LoginActivity extends BaseActivity {
             showText("请输入id和密码");
             return;
         }
+//        showText("登录成功！");
+//        TabActivity.Start(LoginActivity.this);
     }
 }

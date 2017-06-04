@@ -18,7 +18,7 @@
         <!-- 访问服务器的域名,因为服务器域名无法确定，所以需要随时改动 -->
         <meta-data
             android:name="BASE_URL"
-            android:value="http://10.8.162.26:5000/" />
+            android:value="http://10.209.4.105:5000/" />
 
         <activity android:name=".android.activity.MainActivity"></activity>
         <activity android:name=".android.activity.TabActivity">

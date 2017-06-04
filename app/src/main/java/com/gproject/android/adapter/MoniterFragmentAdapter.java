@@ -12,7 +12,7 @@ import com.gproject.android.fragment.MoniterItemFragment;
  */
 
 public class MoniterFragmentAdapter extends FragmentStatePagerAdapter {
-    private static String[] tags = {"宿舍", "灯光", "温度", "湿度", "其他"};
+    private static String[] tags = {"宿舍", "灯光", "风扇", "空调", "加湿器"};
     private Context mContext;
 
 

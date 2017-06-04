@@ -9,6 +9,8 @@ import com.gproject.android.network.BaseException;
 import com.gproject.android.network.BaseResponse;
 import com.gproject.android.network.NetworkError;
 import com.gproject.android.network.RequestListener;
+import com.gproject.android.response.GetDormInfoResponse;
+import com.gproject.android.response.GetModeResponse;
 import com.gproject.android.response.LoginResponse;
 import com.gproject.android.response.RegisterResponse;
 import com.gproject.android.response.TestResponse;
@@ -75,6 +77,24 @@ public class NetworkManager {
         params.put("authority",authority);
         new AsyncHttpClientWrapper<RegisterResponse>(asyncHttpClient,context).startPostRequest(fullUrl(NetworkConsts.USER_REGISTER),params,RegisterResponse.class,listener);
     }
+
+
+    public void changeMode(int id, RequestListener<BaseResponse> listener){
+        RequestParams params=getDefaultParams();
+        params.put("modelId",id);
+        new AsyncHttpClientWrapper<BaseResponse>(asyncHttpClient,context).startPostRequest(fullUrl(NetworkConsts.MODE_CHANGE),params,BaseResponse.class,listener);
+    }
+
+    public void getMode(RequestListener<GetModeResponse> listener){
+        RequestParams params=getDefaultParams();
+        new AsyncHttpClientWrapper<GetModeResponse>(asyncHttpClient,context).startGetRequest(fullUrl(NetworkConsts.MODE_GET),params,GetModeResponse.class,listener);
+    }
+
+    public void getDormInfo(RequestListener<GetDormInfoResponse> listener){
+        RequestParams params=getDefaultParams();
+        new AsyncHttpClientWrapper<GetDormInfoResponse>(asyncHttpClient,context).startGetRequest(fullUrl(NetworkConsts.DORMINFO_GET),params,GetDormInfoResponse.class,listener);
+    }
+
 
 
 

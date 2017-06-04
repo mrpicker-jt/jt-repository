@@ -16,6 +16,7 @@ import com.gproject.android.fragment.ModelFragment;
 import com.gproject.android.fragment.MoniterFragment;
 
 import java.util.ArrayList;
+import java.util.logging.Handler;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -52,13 +53,15 @@ public class TabActivity extends BaseActivity implements View.OnClickListener {
         modelBtn.setOnClickListener(this);
 
         // data
-        fragmentItems = new ArrayList<Fragment>();
+        fragmentItems = new ArrayList<>();
         firstClickBack=System.currentTimeMillis();
 
         initTabHost();
 
         // action
         tabIndex = TAB_MONITER;
+        moniterBtn.setTextColor(getResources().getColor(R.color.blue_a));
+        updateTabItemView(TAB_MODEL,false);
         updateTabItemView(tabIndex, true);
     }
 
@@ -107,9 +110,13 @@ public class TabActivity extends BaseActivity implements View.OnClickListener {
         switch (view.getId()) {
             case R.id.tab_monitor:
                 showFragment(TAB_MONITER);
+                moniterBtn.setTextColor(getResources().getColor(R.color.blue_a));
+                modelBtn.setTextColor(getResources().getColor(R.color.black));
                 break;
             case R.id.tab_modle:
                 showFragment(TAB_MODEL);
+                moniterBtn.setTextColor(getResources().getColor(R.color.black));
+                modelBtn.setTextColor(getResources().getColor(R.color.blue_a));
                 break;
         }
     }

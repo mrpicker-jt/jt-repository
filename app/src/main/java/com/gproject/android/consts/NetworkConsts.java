@@ -11,7 +11,12 @@ public class NetworkConsts {
     //login
     public static final String USER_LOGIN="user/login";
 
-    //   192.333.22.2:5000/api/user/register
+    //model
+    public static final String MODE_GET ="mobile/currentMode";
+    public static final String MODE_CHANGE ="mobile/changeMode";
+
+    //dorm
+    public static final String DORMINFO_GET ="mobile/roomInfo";
 
     public static final String USER_REGISTER="api/user/register";
 }

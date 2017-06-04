@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
+    android:layout_height="match_parent"
+    android:background="@color/white">
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="moniteritem"
-        android:gravity="center"/>
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/dorm_power_count"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="宿舍本月用电量：93度"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:background="@color/black"/>
+        <TextView
+            android:id="@+id/dorm_person_status"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/blue_a"
+            android:textSize="20sp"
+            android:text="宿舍室内人员状态：有人"
+            android:gravity="center"/>
+    </LinearLayout>
 </RelativeLayout>
